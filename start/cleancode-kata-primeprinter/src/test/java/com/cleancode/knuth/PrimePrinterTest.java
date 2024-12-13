@@ -19,26 +19,29 @@ public class PrimePrinterTest {
 
     @AfterEach
     void teardown() {
-    	System.out.close();
+        System.out.close();
         System.setOut(out);
         new File("lead.txt").delete();
     }
 
     @Test
     void makeSureOutputMatchesGold() throws Exception {
-        PrimePrinter.main(new String[0]);
+        // Utilisez PrimePrinterHelper au lieu de PrimePrinter.main()
+        PrimePrinterHelper helper = new PrimePrinterHelper();
+        helper.generateAndPrintPrimes(); // Génère et imprime les nombres premiers
+
         BufferedReader lead = null;
         BufferedReader gold = null;
-		try {
-			lead = new BufferedReader(new FileReader("lead.txt"));
-			gold = new BufferedReader(new FileReader("gold.txt"));
-			String line;
-			while ((line = gold.readLine()) != null)
-				assertEquals(line, lead.readLine());
-			assertEquals(null, lead.readLine());
-		} finally {
-			lead.close();
-			gold.close();
-		}
+        try {
+            lead = new BufferedReader(new FileReader("lead.txt"));
+            gold = new BufferedReader(new FileReader("gold.txt"));
+            String line;
+            while ((line = gold.readLine()) != null)
+                assertEquals(line, lead.readLine());
+            assertEquals(null, lead.readLine());
+        } finally {
+            lead.close();
+            gold.close();
+        }
     }
 }
