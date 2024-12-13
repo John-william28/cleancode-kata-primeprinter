@@ -1,7 +1,6 @@
 package com.cleancode.knuth;
 
 public class PrimePrinterHelper {
-
     private final int[] primes = new int[PrimePrinter.numberOfNumbers + 1]; // Utilise le champ statique
     private final int ordmax = 30;
     private final int[] multiples = new int[ordmax + 1];

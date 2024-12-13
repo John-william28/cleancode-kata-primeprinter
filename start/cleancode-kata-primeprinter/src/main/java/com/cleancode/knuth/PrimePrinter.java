@@ -2,7 +2,6 @@ package com.cleancode.knuth;
 
 public class PrimePrinter {
     public static final int numberOfNumbers = 1000; // Champ rendu statique
-
     // Méthode pour imprimer les nombres premiers
     public void printPrimes(int[] numbers, int numberOfNumbers) {
         int linesPerPage = 50;
