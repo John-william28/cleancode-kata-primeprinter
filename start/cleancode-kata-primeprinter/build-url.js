@@ -11,7 +11,6 @@ function buildUrl(url, options) {
     } else {
       builtUrl = url;
     }
-
     if (options) {
       if (options.path) {
         builtUrl += '/' + options.path;
