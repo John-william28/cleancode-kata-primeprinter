@@ -11,7 +11,6 @@ public class Exercise1 {
         this.approvedForConsumption = approvedForConsumption;
         this.inspectorId = inspectorId;
     }
-
     public boolean isEdible() {
         return this.expirationDate.isAfter(LocalDate.now()) &&
                 this.approvedForConsumption &&
